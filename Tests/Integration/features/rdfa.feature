@@ -6,6 +6,7 @@ Feature: RDFa tags are inserted around the content.
 		Then I should see "Linked Data"
 
 	Scenario: RDFa inserted
+		Given I load the test data
 		Given I am on posting listing
 		Then I should find the following RDFa triples:
           | SUBJECT | PREDICATE     | OBJECT      |
@@ -13,6 +14,7 @@ Feature: RDFa tags are inserted around the content.
 		And I should find namespace declaration "dcterms" "http://purl.org/dc/terms/" for "dcterms:title"
 
 	Scenario: RDFa inserted on detail page
+		Given I load the test data
 		Given I am on posting listing
 		And I follow "Linked Data"
 		Then I should find the following RDFa triples:

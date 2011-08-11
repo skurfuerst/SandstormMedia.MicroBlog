@@ -23,7 +23,12 @@ Then /^(?:|I )should find the following RDFa triples:$/ do |table|
     objectRegex = Regexp.new("^" + triple['OBJECT'] + "$")
 
     tag = find("span[property='" + triple['PREDICATE'] + "']")
-    assert_match(objectRegex, tag.text)
+
+		if tag['content'] != ''
+			assert_equal(triple['OBJECT'], tag['content'])
+		else
+			assert_match(objectRegex, tag.text)
+		end
     if (!@subjects)
       @subjects = {}
     end
@@ -34,6 +39,27 @@ Then /^(?:|I )should find the following RDFa triples:$/ do |table|
       @subjects[triple['SUBJECT']] = tag['about']
     end
   end
+end
+
+Then /^trigger the keyUp event on "([^"]*)"$/ do |selector|
+	find(selector).trigger('keyup');
+end
+
+Then /^click on the linked data URI "([^"]*)"$/ do |linkedDataUri|
+  find('*[data-uri="' + linkedDataUri + '"]').click()
+end
+
+
+Then /^wait$/ do
+  sleep(5)
+end
+
+Then /^render$/ do
+  page().driver.render("/tmp/screen.png")
+end
+
+Then /^(?:|I )submit the form$/ do
+  click_button('Update')
 end
 
 
