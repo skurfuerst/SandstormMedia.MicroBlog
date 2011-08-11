@@ -8,7 +8,7 @@
 			<ul>
 				<f:for each="{blogs}" as="blog">
 					<li>
-						<f:link.action action="show" arguments="{blog: blog}">{blog.name}</f:link.action>
+						<f:link.action action="show" arguments="{blog: blog}">{blog.title}</f:link.action>
 						<f:link.action action="edit" arguments="{blog: blog}">Edit</f:link.action>
 						<f:link.action action="delete" arguments="{blog: blog}">Delete</f:link.action>
 					</li>

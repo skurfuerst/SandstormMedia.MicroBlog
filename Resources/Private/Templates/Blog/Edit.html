@@ -5,11 +5,8 @@
 <f:section name="Content">
 	<f:form action="update" object="{blog}" name="blog">
 		<ol>
-			<li>
-				<label for="name">Name</label>
-				<f:form.textbox property="name" id="name" />
-			</li>
-		
+			<f:render partial="BlogForm" />
+
 			<li>
 				<f:form.submit value="Update"/>
 			</li>

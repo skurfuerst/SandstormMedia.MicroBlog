@@ -11,7 +11,7 @@ namespace SandstormMedia\MicroBlog\Domain\Repository;
  *
  * @scope singleton
  */
-class BlogRepository extends \TYPO3\FLOW3\Persistence\Repository {
+class BlogEntryRepository extends \TYPO3\FLOW3\Persistence\Repository {
 
 	// add customized methods here
 

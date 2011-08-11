@@ -7,10 +7,10 @@ namespace SandstormMedia\MicroBlog\Controller;
  *                                                                        */
 
 use \TYPO3\FLOW3\MVC\Controller\ActionController;
-use \SandstormMedia\MicroBlog\Domain\Model\Blog;
+use \SandstormMedia\MicroBlog\Domain\Model\BlogEntry;
 
 /**
- * Blog controller for the SandstormMedia.MicroBlog package 
+ * BlogEntry controller for the SandstormMedia.MicroBlogEntry package
  *
  * @scope singleton
  */
@@ -18,70 +18,70 @@ class BlogController extends ActionController {
 
 	/**
 	 * @inject
-	 * @var \SandstormMedia\MicroBlog\Domain\Repository\BlogRepository
+	 * @var \SandstormMedia\MicroBlog\Domain\Repository\BlogEntryRepository
 	 */
-	protected $blogRepository;
+	protected $blogEntryRepository;
 
 	/**
 	 * Shows a list of blogs
 	 */
 	public function indexAction() {
-		$this->view->assign('blogs', $this->blogRepository->findAll());
+		$this->view->assign('blogs', $this->blogEntryRepository->findAll());
 	}
 
 	/**
-	 * Shows a single blog object
+	 * Shows a single BlogEntry object
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\Blog $blog The blog to show
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $BlogEntry The BlogEntry to show
 	 */
-	public function showAction(Blog $blog) {
+	public function showAction(BlogEntry $blog) {
 		$this->view->assign('blog', $blog);
 	}
 
 	/**
-	 * Shows a form for creating a new blog object
+	 * Shows a form for creating a new BlogEntry object
 	 */
 	public function newAction() {
 	}
 
 	/**
-	 * Adds the given new blog object to the blog repository
+	 * Adds the given new BlogEntry object to the BlogEntry repository
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\Blog $blog A new blog to add
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $blogEntry A new BlogEntry to add
 	 */
-	public function createAction(Blog $newBlog) {
-		$this->blogRepository->add($newBlog);
+	public function createAction(BlogEntry $newBlog) {
+		$this->blogEntryRepository->add($newBlog);
 		$this->flashMessageContainer->add('Created a new blog.');
 		$this->redirect('index');
 	}
 
 	/**
-	 * Shows a form for editing an existing blog object
+	 * Shows a form for editing an existing BlogEntry object
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\Blog $blog The blog to edit
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $blogEntry The BlogEntry to edit
 	 */
-	public function editAction(Blog $blog) {
-		$this->view->assign('blog', $blog);
+	public function editAction(BlogEntry $blogEntry) {
+		$this->view->assign('blog', $blogEntry);
 	}
 
 	/**
-	 * Updates the given blog object
+	 * Updates the given BlogEntry object
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\Blog $blog The blog to update
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $blogEntry The BlogEntry to update
 	 */
-	public function updateAction(Blog $blog) {
-		$this->blogRepository->update($blog);
+	public function updateAction(BlogEntry $blogEntry) {
+		$this->blogEntryRepository->update($blogEntry);
 		$this->flashMessageContainer->add('Updated the blog.');
 		$this->redirect('index');
 	}
 
 	/**
-	 * Removes the given blog object from the blog repository
+	 * Removes the given BlogEntry object from the BlogEntry repository
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\Blog $blog The blog to delete
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $blogEntry The BlogEntry to delete
 	 */
-	public function deleteAction(Blog $blog) {
-		$this->blogRepository->remove($blog);
+	public function deleteAction(BlogEntry $blogEntry) {
+		$this->blogEntryRepository->remove($blogEntry);
 		$this->flashMessageContainer->add('Deleted a blog.');
 		$this->redirect('index');
 	}

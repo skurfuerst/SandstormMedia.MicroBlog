@@ -7,11 +7,7 @@
 
 	<f:form action="create" name="newBlog">
 		<ol>
-			<li>
-				<label for="name">Name</label>
-				<f:form.textbox property="name" id="name" />
-			</li>
-		
+			<f:render partial="BlogForm" />
 			<li>
 				<f:form.submit value="Create" />
 			</li>
