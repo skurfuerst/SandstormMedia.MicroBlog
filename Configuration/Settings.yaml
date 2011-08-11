@@ -1,0 +1,7 @@
+SandstormMedia:
+  Semantic:
+    PropertyMapping:
+      SandstormMedia\MicroBlog\Domain\Model\BlogEntry:
+        properties:
+          text:
+            type: sioc:content

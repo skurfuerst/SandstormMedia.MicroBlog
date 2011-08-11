@@ -11,6 +11,7 @@ namespace SandstormMedia\MicroBlog\Domain\Model;
  *
  * @scope prototype
  * @entity
+ * @rdfType sioctypes:BlogPost
  */
 class BlogEntry {
 
@@ -18,6 +19,7 @@ class BlogEntry {
 	 * @var string
 	 * @validate StringLength(minimum = 1, maximum = 100)
 	 * @Column(length="100")
+	 * @rdfType dcterms:title
 	 */
 	protected $title;
 
@@ -40,6 +42,9 @@ class BlogEntry {
 	protected $teaser;
 
 	/**
+	 * The text has intentionally NO rdfType annotation, as this comes from settings,
+	 * and we check that it is nevertheless generated as RDF triple.
+	 *
 	 * @Column(type="text")
 	 * @var string
 	 */
