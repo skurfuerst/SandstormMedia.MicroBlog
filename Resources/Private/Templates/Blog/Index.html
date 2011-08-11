@@ -1,0 +1,23 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of blogs</f:section>
+
+<f:section name="Content">
+	<f:if condition="{blogs}">
+		<f:then>
+			<ul>
+				<f:for each="{blogs}" as="blog">
+					<li>
+						<f:link.action action="show" arguments="{blog: blog}">{blog.name}</f:link.action>
+						<f:link.action action="edit" arguments="{blog: blog}">Edit</f:link.action>
+						<f:link.action action="delete" arguments="{blog: blog}">Delete</f:link.action>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No blogs created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new blog</f:link.action></p>
+</f:section>

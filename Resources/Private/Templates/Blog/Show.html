@@ -1,0 +1,12 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Show blog "{blog.name}"</f:section>
+
+<f:section name="Content">
+	<table><f:for each="{propertyNames}" as="propertyName">
+		<tr>
+			<th><k:inflect.humanizeCamelCase>{propertyName}</k:inflect.humanizeCamelCase></th>
+			<td>{blog.{propertyName}}</td>
+		</tr>
+	</f:for></table>
+</f:section>
