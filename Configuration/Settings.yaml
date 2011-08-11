@@ -5,3 +5,9 @@ SandstormMedia:
         properties:
           text:
             type: sioc:content
+          location:
+            type: foaf:based_near
+            externalResolver: SandstormMedia\Semantic\ExternalReference\DbpediaResolver
+          text:
+            type: sioc:content
+            textEnricher: true

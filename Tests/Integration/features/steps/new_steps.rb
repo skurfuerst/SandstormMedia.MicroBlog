@@ -17,19 +17,22 @@ Then /^(?:|I )should find namespace declaration "([^"]*)" "([^"]*)" for "([^"]*)
   assert_equal(fullNamespace, tag['xmlns:' + prefix])
 end
 
-Then /^(?:|I )should find RDFa triple "([^"]*)" "([^"]*)" "([^"]*)"$/ do |subjectIdentifier, predicateCurie, object|
-  objectRegex = Regexp.new("^" + object + "$")
+Then /^(?:|I )should find the following RDFa triples:$/ do |table|
 
-  tag = find("span[property='" + predicateCurie + "']")
-  assert_match(objectRegex, tag.text)
-  if (!@subjects)
-    @subjects = {}
-  end
+  table.hashes.each do |triple|
+    objectRegex = Regexp.new("^" + triple['OBJECT'] + "$")
 
-  if (@subjects[subjectIdentifier])
-    assert_equal(@subjects[subjectIdentifier], tag['about'])
-  else
-    @subjects[subjectIdentifier] = tag['about']
+    tag = find("span[property='" + triple['PREDICATE'] + "']")
+    assert_match(objectRegex, tag.text)
+    if (!@subjects)
+      @subjects = {}
+    end
+
+    if (@subjects[triple['SUBJECT']])
+      assert_equal(@subjects[triple['SUBJECT']], tag['about'])
+    else
+      @subjects[triple['SUBJECT']] = tag['about']
+    end
   end
 end
 
