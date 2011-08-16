@@ -4,7 +4,13 @@
 		<meta charset="utf-8">
 		<title><f:render section="Title" /></title>
 		<f:base />
-		<script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="{f:uri.resource(package: 'SandstormMedia.Semantic', path:'jquery-popover/jquery.popover.js')}"></script>
+		<script src="{f:uri.resource(package: 'SandstormMedia.Semantic', path:'widgets.js')}"></script>
+		<link rel="stylesheet" href="{f:uri.resource(package: 'SandstormMedia.Semantic', path:'jquery-popover/jquery.popover.css')}" />
+		<link rel="stylesheet" href="{f:uri.resource(package: 'SandstormMedia.Semantic', path:'style.css')}" />
+
 	</head>
 	<body>
 		<f:flashMessages class="flashmessages" />
