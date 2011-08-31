@@ -46,7 +46,7 @@ Then /^trigger the keyUp event on "([^"]*)"$/ do |selector|
 end
 
 Then /^click on the linked data URI "([^"]*)"$/ do |linkedDataUri|
-  find('*[data-uri="' + linkedDataUri + '"]').click()
+  find('*[title="' + linkedDataUri + '"]').click()
 end
 
 

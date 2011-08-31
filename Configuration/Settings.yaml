@@ -10,4 +10,4 @@ SandstormMedia:
             linkify: true
           text:
             type: sioc:content
-            textEnricher: true
+            enrichText: true
