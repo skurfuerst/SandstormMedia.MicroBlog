@@ -1,5 +1,0 @@
-default:
-  context:
-    parameters:
-      default_session: zombie
-      base_url: http://dev.flow3.local/
