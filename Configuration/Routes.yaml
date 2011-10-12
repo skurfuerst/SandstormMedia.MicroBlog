@@ -1,0 +1,60 @@
+-
+  name: 'Single Blog'
+  uriPattern: '{blog}'
+  defaults:
+    '@package':    'SandstormMedia.MicroBlog'
+    '@controller': 'Blog'
+    '@action':     'show'
+  routeParts:
+    blog:
+      objectType: SandstormMedia\MicroBlog\Domain\Model\BlogEntry
+
+-
+  name: 'Single Blog edit'
+  uriPattern: '{blogEntry}/edit'
+  defaults:
+    '@package':    'SandstormMedia.MicroBlog'
+    '@controller': 'Blog'
+    '@action':     'edit'
+  routeParts:
+    blogEntry:
+      objectType: SandstormMedia\MicroBlog\Domain\Model\BlogEntry
+
+-
+  name: 'Single Blog update'
+  uriPattern: '{blogEntry}/update'
+  defaults:
+    '@package':    'SandstormMedia.MicroBlog'
+    '@controller': 'Blog'
+    '@action':     'update'
+  routeParts:
+    blogEntry:
+      objectType: SandstormMedia\MicroBlog\Domain\Model\BlogEntry
+
+
+-
+  name: 'Single Blog delete'
+  uriPattern: '{blogEntry}/delete'
+  defaults:
+    '@package':    'SandstormMedia.MicroBlog'
+    '@controller': 'Blog'
+    '@action':     'delete'
+  routeParts:
+    blogEntry:
+      objectType: SandstormMedia\MicroBlog\Domain\Model\BlogEntry
+
+-
+  name: 'Index'
+  uriPattern: 'index'
+  defaults:
+    '@package':    'SandstormMedia.MicroBlog'
+    '@controller': 'Blog'
+    '@action':     'index'
+
+
+-
+  name: 'Defaults'
+  uriPattern: '({@action})'
+  defaults:
+    '@package':    'SandstormMedia.MicroBlog'
+    '@controller': 'Blog'

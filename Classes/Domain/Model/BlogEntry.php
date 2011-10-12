@@ -20,6 +20,7 @@ class BlogEntry {
 	 * @validate StringLength(minimum = 1, maximum = 100)
 	 * @Column(length="100")
 	 * @rdfType dcterms:title
+	 * @identity
 	 */
 	protected $title;
 

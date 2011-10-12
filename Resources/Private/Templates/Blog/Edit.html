@@ -1,15 +1,11 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Edit blog "{blog.title}"</f:section>
+<f:section name="Title">{blog.title}</f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{blog}" name="blogEntry">
-		<ol>
 			<f:render partial="BlogForm" />
 
-			<li>
-				<f:form.submit value="Update"/>
-			</li>
-		</ol>
+			<f:form.submit value="Update"/><f:link.action action="show" arguments="{blog: blog}">cancel</f:link.action>
 	</f:form>
 </f:section>

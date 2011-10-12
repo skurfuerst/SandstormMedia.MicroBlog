@@ -11,11 +11,15 @@
 		<link rel="stylesheet" href="{f:uri.resource(package: 'SandstormMedia.Semantic', path:'jquery-popover/jquery.popover.css')}" />
 		<link rel="stylesheet" href="{f:uri.resource(package: 'SandstormMedia.Semantic', path:'style.css')}" />
 
+		<link rel="stylesheet" href="{f:uri.resource(path:'Stylesheets/style.css')}" />
+
 	</head>
 	<body>
-		<f:flashMessages class="flashmessages" />
+		<div class="page">
+			<f:flashMessages class="flashmessages" />
 
-		<h1><f:render section="Title" /></h1>
-		<f:render section="Content" />
+			<h1><f:render section="Title" /></h1>
+			<f:render section="Content" />
+		</div>
 	</body>
 </html>
