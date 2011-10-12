@@ -32,7 +32,7 @@ class BlogController extends ActionController {
 	/**
 	 * Shows a single BlogEntry object
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $BlogEntry The BlogEntry to show
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $blog The BlogEntry to show
 	 */
 	public function showAction(BlogEntry $blog) {
 		$this->view->assign('blog', $blog);
@@ -47,7 +47,7 @@ class BlogController extends ActionController {
 	/**
 	 * Adds the given new BlogEntry object to the BlogEntry repository
 	 *
-	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $blogEntry A new BlogEntry to add
+	 * @param \SandstormMedia\MicroBlog\Domain\Model\BlogEntry $newBlog A new BlogEntry to add
 	 */
 	public function createAction(BlogEntry $newBlog) {
 		$this->blogEntryRepository->add($newBlog);
